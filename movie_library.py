@@ -40,22 +40,22 @@ movie7 = Movie(title="Jurassic World", year = 2015, genre = "Science fiction act
 movie8 = Movie(title="The Lion King", year = 1994, genre = " Animated musical drama")
 
 
-Series1 = Series(title="The Crown", year = 2016, genre = "Drama", season = 1, episode = 1)
-Series2 = Series(title="The Crown", year = 2016, genre = "Drama", season = 1, episode = 2)
-Series3 = Series(title="The Crown", year = 2016, genre = "Drama", season = 1, episode = 3)
-Series4 = Series(title="Death in Paradise", year = 2011, genre = "British–French crime comedy drama", season = 1, episode = 9)
-Series5 = Series(title="Death in Paradise", year = 2011, genre = "British–French crime comedy drama", season = 1, episode = 10)
-Series6 = Series(title="Death in Paradise", year = 2016, genre = "British–French crime comedy drama", season = 8, episode = 5)
-Series7 = Series(title="Death in Paradise", year = 2016, genre = "British–French crime comedy drama", season = 8, episode = 6)
+series1 = Series(title="The Crown", year = 2016, genre = "Drama", season = 1, episode = 1)
+series2 = Series(title="The Crown", year = 2016, genre = "Drama", season = 1, episode = 2)
+series3 = Series(title="The Crown", year = 2016, genre = "Drama", season = 1, episode = 3)
+series4 = Series(title="Death in Paradise", year = 2011, genre = "British–French crime comedy drama", season = 1, episode = 9)
+series5 = Series(title="Death in Paradise", year = 2011, genre = "British–French crime comedy drama", season = 1, episode = 10)
+series6 = Series(title="Death in Paradise", year = 2016, genre = "British–French crime comedy drama", season = 8, episode = 5)
+series7 = Series(title="Death in Paradise", year = 2016, genre = "British–French crime comedy drama", season = 8, episode = 6)
 
-one_list = [movie1, movie2, movie3, movie4, movie5, movie6, movie7, movie8, Series1, Series2, Series3, Series4, Series5, Series6, Series7]
+one_list = [movie1, movie2, movie3, movie4, movie5, movie6, movie7, movie8, series1, series2, series3, series4, series5, series6, series7]
 
 filtered_list = []
 
 
 def get_movies():
     for i in one_list:
-        if isinstance(i,Series)!= True:
+        if isinstance(i,Series) is False:
             filtered_list.append(i)
         else:
             pass
@@ -65,24 +65,12 @@ def get_movies():
 
 def get_Series():
     for i in one_list:
-        if isinstance(i,Series)== True:
+        if isinstance(i,Series) is True:
             filtered_list.append(i)
         else:
             pass
     by_title_asc = sorted(filtered_list, key=lambda m: m.title)
     return by_title_asc
-
-
-def search(title):    
-    searched =[]
-    for i in one_list:
-        if title == i.title:
-            searched.append(i)
-            return i
-        else:
-            pass
-    if len(searched)==0:
-            print('No such title in the library!')
 
 
 def generate_views():
